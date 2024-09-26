@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:07 by anaouali          #+#    #+#             */
-/*   Updated: 2024/09/25 15:36:09 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/09/26 14:24:11 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,4 @@ Zombie* newZombie(std::string name){
     std::getline(std::cin, input);
     zombie->setName(input);
     return (zombie);
-    
 }
