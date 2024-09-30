@@ -24,11 +24,12 @@ public:
 
     ~Zombie(){
         std::cout << "Destructor called on : " << Zombie::name << std::endl;
+        
     }
 };
 
-void    randomChump(std::string name);
-Zombie* newZombie(std::string name);
+Zombie* zombieHorde( int N, std::string name );
+
 
 #endif
 

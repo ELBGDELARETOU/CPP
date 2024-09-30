@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 15:18:07 by anaouali          #+#    #+#             */
-/*   Updated: 2024/09/27 15:04:21 by anaouali         ###   ########.fr       */
+/*   Created: 2024/09/27 14:50:03 by anaouali          #+#    #+#             */
+/*   Updated: 2024/09/27 17:42:54 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.h"
 
-// int main(int argc, char **argv){
+Zombie* zombieHorde( int N, std::string name ){
+    
+    Zombie *horde = new Zombie[N];
 
-//     if (argc != 2)
-//         return (std::cout << "ERORR : please input a Zombie name" << std::endl, 0);
-//     randomChump(argv[1]);
-
-// }
-
-int main(int argc, char **argv){
-
-    Zombie *pol;
-    if (argc != 2)
-        return (std::cout << "ERORR : please input a Zombie name" << std::endl, 0);
-
-    pol = newZombie(argv[1]);
-    pol->annouce();
-    delete(pol);
+    int i = 0;
+    
+    while(N > i)
+        horde[i++].setName(name);
+    return(horde);
 }

@@ -5,28 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 15:18:07 by anaouali          #+#    #+#             */
-/*   Updated: 2024/09/27 15:04:21 by anaouali         ###   ########.fr       */
+/*   Created: 2024/09/30 14:55:44 by anaouali          #+#    #+#             */
+/*   Updated: 2024/09/30 14:57:04 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "HumanA.h"
+#include "HumanB.h"
+#include "Weapon.h"
 
-// int main(int argc, char **argv){
-
-//     if (argc != 2)
-//         return (std::cout << "ERORR : please input a Zombie name" << std::endl, 0);
-//     randomChump(argv[1]);
-
-// }
-
-int main(int argc, char **argv){
-
-    Zombie *pol;
-    if (argc != 2)
-        return (std::cout << "ERORR : please input a Zombie name" << std::endl, 0);
-
-    pol = newZombie(argv[1]);
-    pol->annouce();
-    delete(pol);
+int main(){
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    return 0;
 }
