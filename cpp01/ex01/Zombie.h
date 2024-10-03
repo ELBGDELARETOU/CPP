@@ -1,7 +1,8 @@
 #ifndef ZOMBIE_H
 # define ZOMBIE_H
 #include <iostream>
-
+#include <sstream> 
+#include <string> 
 class Zombie{
 
 private:
@@ -17,19 +18,11 @@ public:
     void setName(std::string &name){
         this->name = name;
     }
-  
-    Zombie(){
-        std::cout << "Constructur called" << std::endl;
-    }
-
-    ~Zombie(){
-        std::cout << "Destructor called on : " << Zombie::name << std::endl;
-        
-    }
+    Zombie();
+    ~Zombie();
 };
 
 Zombie* zombieHorde( int N, std::string name );
-
 
 #endif
 

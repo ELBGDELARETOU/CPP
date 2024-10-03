@@ -5,6 +5,8 @@ int main(int argc, char **argv)
     int i = 0;
     int count = 1;
 
+
+    (void)argc;
     if (!argv[count])
         return(std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl, 0);
     while(argv[count])

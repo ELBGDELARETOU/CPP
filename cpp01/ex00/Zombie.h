@@ -17,14 +17,10 @@ public:
     void setName(std::string &name){
         this->name = name;
     }
-  
-    Zombie(){
-        std::cout << "Constructur called" << std::endl;
-    }
 
-    ~Zombie(){
-        std::cout << "Destructor called on : " << Zombie::name << std::endl;
-    }
+
+Zombie();
+~Zombie();
 };
 
 void    randomChump(std::string name);

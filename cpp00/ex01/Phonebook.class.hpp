@@ -1,6 +1,9 @@
 #ifndef PHONE_BOOK_H
 # define PHONE_BOOK_H
 #include <iostream>
+#include <cstring>
+#include <sstream>
+
 class Phonebook{
 
 public:
@@ -36,8 +39,9 @@ void setPhoneNumber(std::string str){
 void setDarkestSecret(std::string str){
     this->darkestSecret = str;
 }
-    // Phonebook(void);    
-    // ~Phonebook(void);
+
+Phonebook(void);
+~Phonebook(void);
 
 private:
 
@@ -47,5 +51,9 @@ private:
     std::string phoneNumber;
     std::string darkestSecret;
 };
+
+void search_function(Phonebook *fiche);
+void add_function(Phonebook *fiche, int j);
+
 
 #endif
