@@ -1,4 +1,4 @@
-#include "Weapon.h"
+#include "Weapon.hpp"
 
 Weapon::Weapon(const std::string name) : type(name){
     std::cout << "constructeur called weapon" << std::endl;
@@ -9,7 +9,7 @@ Weapon::~Weapon(){
 
 }
 
-const std::string Weapon::getType(){
+const std::string& Weapon::getType() const{
     return(this->type);
 }
 

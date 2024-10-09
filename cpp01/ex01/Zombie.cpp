@@ -6,11 +6,11 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:58:55 by anaouali          #+#    #+#             */
-/*   Updated: 2024/10/03 11:47:07 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:37:57 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 Zombie::Zombie(){
     std::cout << "Constructur called" << std::endl;

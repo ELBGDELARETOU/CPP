@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.h                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:26:08 by anaouali          #+#    #+#             */
-/*   Updated: 2024/10/03 17:13:18 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:37:24 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-#define WEAPON_H
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
 #include <iostream>
 
@@ -23,7 +23,7 @@ public:
     Weapon();
     ~Weapon();
     Weapon(const std::string name);
-    const std::string getType();
+    const std::string& getType() const;
     void setType(std::string newType);
 };
 

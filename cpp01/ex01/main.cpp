@@ -6,11 +6,11 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:18:07 by anaouali          #+#    #+#             */
-/*   Updated: 2024/10/03 10:41:02 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:38:17 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 int main(int argc, char **argv){
 
