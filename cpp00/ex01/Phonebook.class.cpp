@@ -9,6 +9,39 @@ Phonebook::~Phonebook(){
     return;
 }
 
+std::string Phonebook::getFistName(){
+    return (firstName);
+}
+std::string  Phonebook::getLastName(){
+    return (lastName);
+}
+std::string  Phonebook::getNickName(){
+    return (nickName);
+}
+std::string Phonebook::getPhoneNumber(){
+    return (phoneNumber);
+}
+std::string  Phonebook::getDarkestSecret(){
+    return (darkestSecret);
+}
+
+void  Phonebook::setFirstName(std::string str){
+    this->firstName = str;
+}
+void  Phonebook::setLastName(std::string str){
+    this->lastName = str;
+}
+void  Phonebook::setNickName(std::string str){
+    this->nickName = str;
+}
+void  Phonebook::setPhoneNumber(std::string str){
+        this->phoneNumber = str;
+}
+void  Phonebook::setDarkestSecret(std::string str){
+    this->darkestSecret = str;
+}
+
+//------------------------------------------------------------//
 std::string printFormatFirstName(Phonebook *fiche, int i)
 {
     std::string res;

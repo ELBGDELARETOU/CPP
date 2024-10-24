@@ -8,38 +8,16 @@ class Phonebook{
 
 public:
 
-std::string getFistName(){
-    return (firstName);
-}
-std::string getLastName(){
-    return (lastName);
-}
-std::string getNickName(){
-    return (nickName);
-}
-std::string getPhoneNumber(){
-    return (phoneNumber);
-}
-std::string getDarkestSecret(){
-    return (darkestSecret);
-}
-
-void setFirstName(std::string str){
-    this->firstName = str;
-}
-void setLastName(std::string str){
-    this->lastName = str;
-}
-void setNickName(std::string str){
-    this->nickName = str;
-}
-void setPhoneNumber(std::string str){
-        this->phoneNumber = str;
-}
-void setDarkestSecret(std::string str){
-    this->darkestSecret = str;
-}
-
+std::string getFistName();
+std::string getLastName();
+std::string getNickName();
+std::string getPhoneNumber();
+std::string getDarkestSecret();
+void setFirstName(std::string str);
+void setLastName(std::string str);
+void setNickName(std::string str);
+void setPhoneNumber(std::string str);
+void setDarkestSecret(std::string str);
 Phonebook(void);
 ~Phonebook(void);
 
