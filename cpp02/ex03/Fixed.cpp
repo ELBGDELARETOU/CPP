@@ -69,35 +69,35 @@ Fixed Fixed::operator+(const Fixed& other){
     // std::cout << "Addition consturctor called" << std::endl;
     Fixed result;
     result.value = this->value + other.value;
-    return result.toFloat();
+    return result;
 }
 
 Fixed Fixed::operator-(const Fixed& other){
     // std::cout << "Addition consturctor called" << std::endl;
     Fixed result;
     result.value = this->value - other.value;
-    return result.toFloat();
+    return result;
 }
 
 Fixed Fixed::operator/(const Fixed& other){
     // std::cout << "Addition consturctor called" << std::endl;
     Fixed result;
     result.value = this->value / other.value;
-    return result.toFloat();
+    return result;
 }
 
 Fixed Fixed::operator*(const Fixed& other){
     // std::cout << "Addition consturctor called" << std::endl;
     Fixed result;
     result.value = (this->value * other.value) >> fractionlBits;
-    return result.toFloat();
+    return result;
 }
 
 /* __________________________________________________________________________________ */
 
 Fixed Fixed::operator++(){
     this->value += 1 ;
-    return this->toFloat();
+    return *this;
 }
 
 Fixed Fixed::operator++(int){
@@ -108,7 +108,7 @@ Fixed Fixed::operator++(int){
 
 Fixed Fixed::operator--(){
     this->value -= 1 ;
-    return this->toFloat();
+    return *this;
 }
 
 Fixed Fixed::operator--(int){
