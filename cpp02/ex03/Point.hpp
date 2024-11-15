@@ -18,9 +18,9 @@ public:
     Fixed getX() const;
     Fixed getY() const;
     Point &operator=(const Point &other);
-    float calculateArea(const Point &a, const Point &b, const Point &c);
 };
 
+float calculateArea(const Point &a, const Point &b, const Point &c);
 bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

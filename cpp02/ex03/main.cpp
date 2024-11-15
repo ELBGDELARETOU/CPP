@@ -3,19 +3,9 @@
 
 int main(void)
 {
-    Point a;
-    Point b;
-    Point c;
-    Point point;
-
-    point.setX(9);
-    point.setY(1);
-    a.setY(8);
-    a.setX(4);
-    b.setY(9);
-    b.setX(4);
-    c.setY(9);
-    c.setX(8);
-    
-    bool bsp(Point const a, Point const b, Point const c, Point const point);
+    const Point a(1.0, 4.0);
+    const Point b(1.0, 1.0);
+    const Point c(4.0, 1.0);
+    const Point point(3.0, 3.0);
+    bsp(a, b, c, point);
 }

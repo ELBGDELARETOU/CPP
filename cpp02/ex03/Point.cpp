@@ -2,25 +2,15 @@
 
 Point::Point() : x(0), y(0) {}
 
+Point::Point(float x, float y) : x(x), y(y) {}
+
 Fixed Point::getY() const { return y; }
 
 Fixed Point::getX() const { return x; }
 
-Point::~Point()
-{
-}
+Point::~Point() {}
 
 Point::Point(const Point &other) : x(other.x), y(other.y) {};
-
-Point &Point::operator=(const Point &other)
-{
-    if (this != &other)
-    {
-        this->x = other.x;
-        this->y = other.y;
-    }
-    return *this;
-}
 
 //------------------------------------------------------------------------//
 
@@ -37,9 +27,12 @@ float calculateArea(const Point &a, const Point &b, const Point &c)
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-    (void)point;
-    float i;
-    i = calculateArea(a, b, c);
-    std::cout << "i" << std::endl;
-    return (true);
+    float triangle = calculateArea(a, b, c);
+    float tmp = calculateArea(a, b, point);
+    float tmp1 = calculateArea(a, c, point);
+    float tmp2 = calculateArea(c, b, point);
+
+    if ((tmp + tmp1 + tmp2) >= triangle)
+        return (std::cout << "false" << std::endl, true);
+    return (std::cout << "true" << std::endl,false);
 }
