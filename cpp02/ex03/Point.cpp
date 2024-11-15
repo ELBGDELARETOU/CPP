@@ -21,7 +21,7 @@ float calculateArea(const Point &a, const Point &b, const Point &c)
         b.getX() * (c.getY() - a.getY()) +
         c.getX() * (a.getY() - b.getY());
     if (result < 0)
-        result * -1;
+        result = result * -1;
     return (result.toFloat() * 0.5f);
 }
 
@@ -32,7 +32,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
     float tmp1 = calculateArea(a, c, point);
     float tmp2 = calculateArea(c, b, point);
 
-    if ((tmp + tmp1 + tmp2) >= triangle)
+    if ((tmp + tmp1 + tmp2) > triangle)
         return (std::cout << "false" << std::endl, true);
-    return (std::cout << "true" << std::endl,false);
+    return (std::cout << "true" << std::endl, false);
 }
