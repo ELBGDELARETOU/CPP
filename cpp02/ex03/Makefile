@@ -1,8 +1,8 @@
-SRC= Fixed.cpp main.cpp
+SRC= Fixed.cpp Point.cpp main.cpp
 OBJ= $(SRC:.cpp=.o)
 
 CC= c++
-CFLAGS= -Wall -Werror -Wextra -std=c++98
+CFLAGS= -Wall -Werror -Wextra -std=c++98 -g3
 
 NAME= Fixed2
 

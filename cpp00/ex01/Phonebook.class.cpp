@@ -1,52 +1,51 @@
 #include "Phonebook.class.hpp"
 
 Phonebook::Phonebook(){
-    std::cout << "Constructeur called" << std::endl;
+    // std::cout << "Constructeur called" << std::endl;
+    currentIndex = 0;
+    totalContacts = 0;
 }
 
 Phonebook::~Phonebook(){
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
     return;
 }
 
-std::string Phonebook::getFistName(){
+std::string Contact::getFirstName() const{
     return (firstName);
 }
-std::string  Phonebook::getLastName(){
+std::string  Contact::getLastName() const{
     return (lastName);
 }
-std::string  Phonebook::getNickName(){
+std::string  Contact::getNickName() const{
     return (nickName);
 }
-std::string Phonebook::getPhoneNumber(){
+std::string Contact::getPhoneNumber() const{
     return (phoneNumber);
 }
-std::string  Phonebook::getDarkestSecret(){
+std::string  Contact::getDarkestSecret() const{
     return (darkestSecret);
 }
 
-void  Phonebook::setFirstName(std::string str){
+void  Contact::setFirstName(std::string str){
     this->firstName = str;
 }
-void  Phonebook::setLastName(std::string str){
+void  Contact::setLastName(std::string str){
     this->lastName = str;
 }
-void  Phonebook::setNickName(std::string str){
+void  Contact::setNickName(std::string str){
     this->nickName = str;
 }
-void  Phonebook::setPhoneNumber(std::string str){
+void  Contact::setPhoneNumber(std::string str){
         this->phoneNumber = str;
 }
-void  Phonebook::setDarkestSecret(std::string str){
+void  Contact::setDarkestSecret(std::string str){
     this->darkestSecret = str;
 }
 
-//------------------------------------------------------------//
-std::string printFormatFirstName(Phonebook *fiche, int i)
-{
-    std::string res;
 
-    res = fiche[i].getFistName();
+std::string Phonebook::printFormatFirstName(int i) const{
+    std::string res = contacts[i].getFirstName();
     if(res.size() > 10){
         res.insert(9, ".");
         res = res.substr(0,10);
@@ -59,11 +58,9 @@ std::string printFormatFirstName(Phonebook *fiche, int i)
     return(res);
 }
 
-std::string printFormatLastName(Phonebook *fiche, int i)
-{
-    std::string res;
+std::string Phonebook::printFormatLastName(int i) const{
 
-    res = fiche[i].getLastName();
+    std::string res = contacts[i].getLastName();
     if(res.size() > 10){
         res.insert(9, ".");
         res = res.substr(0,10);
@@ -75,11 +72,9 @@ std::string printFormatLastName(Phonebook *fiche, int i)
     }
     return(res);
 }
-std::string printFormatNickName(Phonebook *fiche, int i)
-{
-    std::string res;
 
-    res = fiche[i].getNickName();
+std::string Phonebook::printFormatNickName(int i) const{
+    std::string res = contacts[i].getNickName();
     if(res.size() > 10){
         res.insert(9, ".");
         res = res.substr(0,10);
@@ -111,18 +106,18 @@ bool onlyChar(const std::string& input) {
     return false;
 }
 
-void    printContact(Phonebook *fiche, int num)
-{
+void    Phonebook::printContact(int num) const {
     std::cout << "Contact index : ";
     std::cout << num + 1 << std::endl;
-    std::cout << "Contact first name : " + fiche[num].getFistName() << std::endl;
-    std::cout << "Contact last name : " + fiche[num].getLastName() << std::endl;
-    std::cout << "Contact nickname : " + fiche[num].getNickName() << std::endl;
-    std::cout << "Contact darkest secret : " + fiche[num].getDarkestSecret() << std::endl;
+    std::cout << "Contact first name : " + contacts[num].getFirstName() << std::endl;
+    std::cout << "Contact last name : " + contacts[num].getLastName() << std::endl;
+    std::cout << "Contact phone number : " + contacts[num].getPhoneNumber() << std::endl;
+    std::cout << "Contact nickname : " + contacts[num].getNickName() << std::endl;
+    std::cout << "Contact darkest secret : " + contacts[num].getDarkestSecret() << std::endl;
 
 }
 
-void add_function(Phonebook *fiche, int j)
+void Phonebook::addContact()
 {
     std::string input;
     int i = 0;            
@@ -138,13 +133,15 @@ void add_function(Phonebook *fiche, int j)
     while(i < 5){
         std::cout << str[i] << std::endl;
         std::getline(std::cin, input);
+        if (std::cin.eof())
+            return;
         if (i == 0){
             if (input.empty()){
                 std::cout << "ERROR : empty input" << std::endl;
                 i--;
             }
             else if (onlyChar(input) == false)
-                fiche[j].setFirstName(input);
+                contacts[currentIndex].setFirstName(input);
             else{
                 std::cout << "ERROR : non alphabetic character" << std::endl;
                 i--;
@@ -152,35 +149,36 @@ void add_function(Phonebook *fiche, int j)
         }
         else if (i == 1){
             if (onlyChar(input) == false)
-                fiche[j].setLastName(input);
+                contacts[currentIndex].setLastName(input);
             else{
                 std::cout << "ERROR : non alphabetic character" << std::endl;
                 i--;
             }
         }
         else if (i == 2)
-            fiche[j].setNickName(input);
+            contacts[currentIndex].setNickName(input);
         else if (i == 3){
             if (input.empty()){
                 std::cout << "ERROR : empty input" << std::endl;
                 i--;
             }
              if (charOrNo(input) == false)
-                fiche[j].setPhoneNumber(input);
+                contacts[currentIndex].setPhoneNumber(input);
             else{
             std::cout << "ERROR : non numeric character try again" << std::endl;
                 i--;
             }
         }
         else if (i == 4)
-            fiche[j].setDarkestSecret(input);
+            contacts[currentIndex].setDarkestSecret(input);
     i++;
     }
+    currentIndex = (currentIndex + 1) % 8;
+    totalContacts++;
     return ;
 }
 
-void    printPhonebook(Phonebook *fiche)
-{
+void    Phonebook::printPhonebook() const {
     int i = 0;
     int index = 1;
 
@@ -188,22 +186,22 @@ void    printPhonebook(Phonebook *fiche)
     std::cout << "|----------|----------|----------|----------|" << std::endl;
     while (i < 8){
         std::cout << "|         " << index;
-        std::cout << "|" << printFormatFirstName(fiche, i);
-        std::cout << "|" << printFormatLastName(fiche, i);
-        std::cout << "|" << printFormatNickName(fiche, i) << "|" <<std::endl;
+        std::cout << "|" << printFormatFirstName(i);
+        std::cout << "|" << printFormatLastName(i);
+        std::cout << "|" << printFormatNickName(i) << "|" <<std::endl;
         i++;
         index++;
     }
     return ;
 }
 
-void search_function(Phonebook *fiche)
+void Phonebook::searchContacts() const
 {
     std::string input;
     
     int i = 0;
     long nbr;
-    printPhonebook(fiche);
+    printPhonebook();
     std::cout << "please input a contact index for more details :" << std::endl;
     std::getline(std::cin, input);
     if (charOrNo(input) == true){
@@ -214,7 +212,7 @@ void search_function(Phonebook *fiche)
     iss >> nbr;
     while (i < 8 && nbr != 9){
         if (i == (nbr - 1)){
-            printContact(fiche, --nbr);
+            printContact(--nbr);
             return ;
         }
         i++;

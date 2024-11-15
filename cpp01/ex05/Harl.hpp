@@ -12,7 +12,7 @@ private:
     void warning();
     void error();
 public:
-    void complain(const std::string &input);
+    void complain(const std::string input);
     Harl();
     ~Harl();
 };

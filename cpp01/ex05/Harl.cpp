@@ -17,13 +17,13 @@ void    Harl::error(void){
 }
 
 int stringToHash(const std::string& str) {
-    return (str == "debug") ? 0 :
-        (str == "info") ? 1 :
-        (str == "warning") ? 2 :
-        (str == "error") ? 3 : -1;
+    return (str == "DEBUG") ? 0 :
+        (str == "INFO") ? 1 :
+        (str == "WARNING") ? 2 :
+        (str == "ERROR") ? 3 : -1;
 }
 
-void Harl::complain(const std::string &input){
+void Harl::complain(const std::string input){
     switch(stringToHash(input)){
         case 0:
             Harl::debug();

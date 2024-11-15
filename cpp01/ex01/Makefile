@@ -6,9 +6,10 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = ZombieHorde
 
+all: $(NAME)
+
 $(NAME): $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-all: name
 
 %.o: %.cpp
 		$(CC) $(CFLAGS) -c $< -o $@

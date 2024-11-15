@@ -8,7 +8,7 @@ NAME = prog
 
 $(NAME): $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-all: name
+all: $(NAME)
 
 %.o: %.cpp
 		$(CC) $(CFLAGS) -c $< -o $@

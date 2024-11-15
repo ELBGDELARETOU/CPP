@@ -6,11 +6,11 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:07 by anaouali          #+#    #+#             */
-/*   Updated: 2024/09/27 14:37:57 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:02:42 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 Zombie* newZombie(std::string name){
     

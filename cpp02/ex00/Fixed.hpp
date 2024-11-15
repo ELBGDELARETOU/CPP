@@ -7,15 +7,16 @@
 class Fixed
 {
 private:
-    int                 value;
-    static const int    fractionlBits = 8;
+    int value;
+    static const int fractionlBits = 8;
+
 public:
-    int     getRawBits(void) const;
-    void    setRawBits(int const raw);
     Fixed();
-    Fixed(const Fixed& other);
-    Fixed& operator=(const Fixed& other);
+    Fixed(const Fixed &other);
+    Fixed &operator=(const Fixed &other);
     ~Fixed();
+    int getRawBits(void) const;
+    void setRawBits(int const raw);
 };
 
 #endif

@@ -95,9 +95,9 @@ Fixed Fixed::operator*(const Fixed& other){
 
 /* __________________________________________________________________________________ */
 
-Fixed Fixed::operator++(){
+Fixed& Fixed::operator++(){
     this->value += 1 ;
-    return this->toFloat();
+    return *this;
 }
 
 Fixed Fixed::operator++(int){
@@ -106,9 +106,9 @@ Fixed Fixed::operator++(int){
     return tmp;
 }
 
-Fixed Fixed::operator--(){
+Fixed& Fixed::operator--(){
     this->value -= 1 ;
-    return this->toFloat();
+    return *this;
 }
 
 Fixed Fixed::operator--(int){

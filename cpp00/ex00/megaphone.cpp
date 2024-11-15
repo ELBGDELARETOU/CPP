@@ -12,13 +12,8 @@ int main(int argc, char **argv)
     while(argv[count])
     {
         while(argv[count][i])
-        {
-            if (argv[count][i] > 96 && argv[count][i] < 123)
-                argv[count][i] -= 32;
-            i++;
-        }
+            std::cout << (char)std::toupper(argv[count][i++]);
         i = 0;
-        std::cout << argv[count];
         count++;       
         if(argv[count])
             std::cout << " ";

@@ -6,13 +6,13 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:55:44 by anaouali          #+#    #+#             */
-/*   Updated: 2024/10/03 16:44:11 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:09:15 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.h"
-#include "HumanB.h"
-#include "Weapon.h"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
 int main(){
     {

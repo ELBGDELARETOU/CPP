@@ -15,13 +15,8 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
-// ************************************************************************** //
-//                               Account Class                                //
-// ************************************************************************** //
 
 class Account {
-
-
 public:
 
 	typedef Account		t;
