@@ -40,7 +40,6 @@ public:
     static const Fixed &min(const Fixed &nb1, const Fixed &nb2);
     Fixed min(Fixed &nb1, Fixed &nb2);
     Fixed max(Fixed &nb1, Fixed &nb2);
-   
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);

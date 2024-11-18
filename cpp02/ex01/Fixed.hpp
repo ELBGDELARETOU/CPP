@@ -22,7 +22,8 @@ public:
     int toInt(void) const;
     int getRawBits(void) const;
     float toFloat(void) const;
-    friend std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 };
+
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif
