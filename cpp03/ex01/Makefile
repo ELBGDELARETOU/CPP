@@ -1,4 +1,4 @@
-SRC = ClapTrap.cpp main.cpp
+SRC = ClapTrap.cpp ScavTrap.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = c++

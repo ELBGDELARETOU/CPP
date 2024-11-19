@@ -1,4 +1,5 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 ClapTrap::ClapTrap()
 {
@@ -8,11 +9,12 @@ ClapTrap::ClapTrap()
     std::cout << "Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name) : name(name)
+ClapTrap::ClapTrap(const std::string &name)
 {
     this->hitPoints = 10;
     this->energyPoints = 10;
     this->attackDamage = 0;
+    this->name = name;
     std::cout << "Constructor with name parameter called" << std::endl;
 }
 
@@ -45,12 +47,9 @@ void ClapTrap::attack(const std::string &target)
 {
     std::cout << "My stats :\nhitPoints = " << hitPoints << "; my energyPoints = " << energyPoints << "; my attackDammage = " << attackDamage << std::endl;
     std::cout << "The target is " << target << " and is taking damages" << std::endl;
-    takeDamage(3);
     std::cout << "You got " << energyPoints << " energy points left ! " << std::endl;
     std::cout << "the target took " << attackDamage << " point(s) of dammage" << std::endl;
-    beRepaired(1);
-    std::cout << "You got have been repared !" << std::endl;
+    std::cout << "You have been repared !" << std::endl;
     std::cout << "you got " << energyPoints << " energy points left !" << std::endl;
     std::cout << "My stats :\nhitPoints = " << hitPoints << "; my energyPoints = " << energyPoints << "; my attackDammage = " << attackDamage << std::endl;
 }
-

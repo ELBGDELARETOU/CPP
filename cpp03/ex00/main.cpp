@@ -2,8 +2,8 @@
 
 int main()
 {
-    std::string john;
-    ClapTrap tmp(john);
+    // std::string john;
+    ClapTrap tmp("john");
 
     tmp.attack("pol");
 }
