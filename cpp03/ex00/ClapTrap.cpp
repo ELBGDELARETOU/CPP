@@ -2,24 +2,32 @@
 
 ClapTrap::ClapTrap()
 {
+    std::cout << "Constructor called" << std::endl;
     this->hitPoints = 10;
     this->energyPoints = 10;
     this->attackDamage = 0;
-    std::cout << "Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name) : name(name)
 {
+    std::cout << "Constructor with name parameter called" << std::endl;
     this->hitPoints = 10;
     this->energyPoints = 10;
     this->attackDamage = 0;
-    std::cout << "Constructor with name parameter called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
     std::cout << "Destructor called" << std::endl;
 }
+void ClapTrap::printStatus()
+{
+    std::cout << "Hit points : " << hitPoints << std::endl; 
+    std::cout << "Energy points : " << energyPoints << std::endl; 
+    std::cout << "Attack damage : " << attackDamage << std::endl;
+    std::cout << "\n";
+}
+
 void ClapTrap::takeDamage(unsigned int amount)
 {
     if (energyPoints > 0)
@@ -43,14 +51,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 void ClapTrap::attack(const std::string &target)
 {
-    std::cout << "My stats :\nhitPoints = " << hitPoints << "; my energyPoints = " << energyPoints << "; my attackDammage = " << attackDamage << std::endl;
-    std::cout << "The target is " << target << " and is taking damages" << std::endl;
-    takeDamage(3);
-    std::cout << "You got " << energyPoints << " energy points left ! " << std::endl;
-    std::cout << "the target took " << attackDamage << " point(s) of dammage" << std::endl;
-    beRepaired(1);
-    std::cout << "You got have been repared !" << std::endl;
-    std::cout << "you got " << energyPoints << " energy points left !" << std::endl;
-    std::cout << "My stats :\nhitPoints = " << hitPoints << "; my energyPoints = " << energyPoints << "; my attackDammage = " << attackDamage << std::endl;
+    if (energyPoints > 0)
+        std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " point of damage !" << std::endl;
 }
-

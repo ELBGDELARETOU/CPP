@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap()
 {
-    std::cout << "Scavtrap constructor called" << std::endl;
+    std::cout << "ScavTrap constructor called" << std::endl;
     name = "no name";
     hitPoints = 100;
     energyPoints = 50;
@@ -11,7 +11,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(const std::string &other)
 {
-    std::cout << "Scavtrap with name constructor called" << std::endl;
+    std::cout << "ScavTrap with name constructor called" << std::endl;
     name = other;
     hitPoints = 100;
     energyPoints = 50;
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(const std::string &other)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "Scavtrap destructor called" << std::endl;
+    std::cout << "ScavTrap destructor called" << std::endl;
 }
 
 void ScavTrap::guardGate()

@@ -1,10 +1,10 @@
-SRC = ClapTrap.cpp ScavTrap.cpp main.cpp
+SRC = ClapTrap.cpp FragTrap.cpp DiamondTrap.cpp ScavTrap.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
-NAME = ScavTrap
+NAME = DiamondTrap
 
 $(NAME): $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
