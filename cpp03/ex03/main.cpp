@@ -7,9 +7,9 @@ int main(void)
     FragTrap FragTrap("FragTrap");
     ClapTrap claptrap("ClapTrap");
     ScavTrap scavTrap("ScavTrap");
-    DiamondTrap diamondTrap;
+    DiamondTrap diamondTrap("DiamondTrap");
 
-    std::cout << "ClavTrap status" << std::endl;
+    std::cout << "\nClapTrap status" << std::endl;
     claptrap.printStatus();
     std::cout << "FragTrap status" << std::endl;
     FragTrap.printStatus();
@@ -18,16 +18,20 @@ int main(void)
     std::cout << "DiamondTrap status" << std::endl;
     diamondTrap.printStatus();
 
-    
+    diamondTrap.whoAmI();
+    diamondTrap.attack("baltazard");
+    diamondTrap.guardGate();
+    diamondTrap.highFivesGuys();
     claptrap.takeDamage(30);
     FragTrap.highFivesGuys();
     FragTrap.attack("ClapTrap");
     FragTrap.beRepaired(52);
     FragTrap.takeDamage(15);
     
-    std::cout << "ClavTrap status" << std::endl;
+    std::cout << "ClapTrap status" << std::endl;
     claptrap.printStatus();
     std::cout << "FragTrap status" << std::endl;
     FragTrap.printStatus();
     return (0);
 }
+
