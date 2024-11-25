@@ -18,6 +18,36 @@ ScavTrap::ScavTrap(const std::string &other)
     attackDamage = 20;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    name = other.name;
+    hitPoints = other.hitPoints;
+    energyPoints = other.energyPoints;
+    attackDamage = other.attackDamage;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
+    if (this != &other)
+    {
+        name = other.name;
+        hitPoints = other.hitPoints;
+        energyPoints = other.energyPoints;
+        attackDamage = other.attackDamage;
+    }
+    return *this;
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+    if (energyPoints > 0)
+    {
+        std::cout << name << " attacks " << target << ", causing " << attackDamage << " point of damage !" << std::endl;
+        takeDamage(attackDamage);
+    }
+}
+
 ScavTrap::~ScavTrap()
 {
     std::cout << "Scavtrap destructor called" << std::endl;

@@ -7,7 +7,7 @@ int main(void)
     FragTrap FragTrap("ScavTrap");
     ClapTrap claptrap("ClapTrap");
 
-    std::cout << "ClavTrap status" << std::endl;
+    std::cout << "ClapTrap status" << std::endl;
     claptrap.printStatus();
     std::cout << "ScavTrap status" << std::endl;
     FragTrap.printStatus();
@@ -18,7 +18,7 @@ int main(void)
     FragTrap.beRepaired(52);
     FragTrap.takeDamage(15);
     
-    std::cout << "ClavTrap status" << std::endl;
+    std::cout << "ClapTrap status" << std::endl;
     claptrap.printStatus();
     std::cout << "FragTrap status" << std::endl;
     FragTrap.printStatus();

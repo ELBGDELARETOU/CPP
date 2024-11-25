@@ -18,6 +18,27 @@ ClapTrap::ClapTrap(const std::string &newName)
     this->attackDamage = 0;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    name = other.name;
+    hitPoints = other.hitPoints;
+    energyPoints = other.energyPoints;
+    attackDamage = other.attackDamage;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+    if (this != &other)
+    {
+        name = other.name;
+        hitPoints = other.hitPoints;
+        energyPoints = other.energyPoints;
+        attackDamage = other.attackDamage;
+    }
+    return *this;
+}
+
 ClapTrap::~ClapTrap()
 {
     std::cout << "Main destructor called" << std::endl;
