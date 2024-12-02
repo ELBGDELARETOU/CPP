@@ -1,9 +1,10 @@
 #ifndef CURE_HPP
 #define CURE_HPP
 
+#include "AMateria.hpp"
 #include <iostream>
 
-class Cure
+class Cure : public AMateria
 {
 private:
     std::string _type;
@@ -13,6 +14,9 @@ public:
     Cure(const Cure &other);
     Cure &operator=(const Cure &ice);
     ~Cure();
+
+    virtual AMateria *clone() const;
+    void use(ICharacter &target);
 };
 
 #endif

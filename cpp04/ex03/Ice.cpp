@@ -2,12 +2,12 @@
 
 Ice::Ice() : _type("ice")
 {
-    std::cout << "Ice constructor called" << std::endl;
+    // std::cout << "Ice constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice &other) : _type(other._type)
 {
-    std::cout << "Ice copy constructor called" << std::endl;
+    // std::cout << "Ice copy constructor called" << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &other)
@@ -19,10 +19,15 @@ Ice &Ice::operator=(const Ice &other)
 
 Ice::~Ice()
 {
-    std::cout << "Ice destructor called" << std::endl;
+    // std::cout << "Ice destructor called" << std::endl;
 }
 
 AMateria *Ice::clone() const
 {
     return new Ice(*this);
+}
+
+void Ice::use(ICharacter &target)
+{
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
