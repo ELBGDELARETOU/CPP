@@ -1,19 +1,20 @@
 #include "Ice.hpp"
+#include "AMateria.hpp"
 
-Ice::Ice() : _type("ice")
+Ice::Ice() : AMateria("ice")
 {
     // std::cout << "Ice constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice &other) : _type(other._type)
+Ice::Ice(const Ice &other)
 {
+    (void)other;
     // std::cout << "Ice copy constructor called" << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &other)
 {
-    if (this != &other)
-        _type = other._type;
+    (void)other;
     return *this;
 }
 

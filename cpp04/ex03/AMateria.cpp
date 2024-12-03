@@ -12,6 +12,7 @@ AMateria::AMateria(std::string const &type) : type(type)
 
 AMateria::~AMateria()
 {
+    
     // std::cout << "AMateria destructor called" << std::endl;
 }
 

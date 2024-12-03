@@ -8,7 +8,7 @@ class ICharacter;
 
 class AMateria
 {
-private:
+protected:
     std::string type;
 
 public:

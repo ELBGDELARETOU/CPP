@@ -18,10 +18,7 @@ Character::Character(const Character &other) : _name(other._name)
 {
     // std::cout << "Character copy constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
-    {
-        delete _backPack[i];
         _backPack[i] = NULL;
-    }
     for (int i = 0; i < 4; i++)
         this->_backPack[i] = other._backPack[i];
 }
@@ -45,8 +42,9 @@ Character &Character::operator=(const Character &other)
 Character::~Character()
 {
     // std::cout << "Character destructor called" << std::endl;
-    for (int i = 0; i < 4; i++)
-        delete _backPack[i];
+    // for (int i = 0; i < 4; i++)
+    //     if (_backPack[i])
+    //         delete _backPack[i];
 }
 
 std::string const &Character::getName() const
@@ -83,7 +81,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    std::cout << _backPack[0] << std::endl;
+    // std::cout << _backPack[0] << std::endl;
     if (idx >= 0 && idx < 4 && _backPack[idx])
         _backPack[idx]->use(target);
     else
