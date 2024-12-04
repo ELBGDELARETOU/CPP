@@ -41,10 +41,10 @@ Character &Character::operator=(const Character &other)
 
 Character::~Character()
 {
-    // std::cout << "Character destructor called" << std::endl;
-    // for (int i = 0; i < 4; i++)
-    //     if (_backPack[i])
-    //         delete _backPack[i];
+    std::cout << "Character destructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+        if (_backPack[i])
+            delete _backPack[i];
 }
 
 std::string const &Character::getName() const
@@ -64,6 +64,7 @@ void Character::equip(AMateria *m)
         if (!_backPack[i])
         {
             _backPack[i] = m;
+            std::cout << "Material on" << std::endl;
             return;
         }
     }

@@ -58,5 +58,5 @@ AMateria *MateriaSource::createMateria(std::string const &type)
         }
     }
     std::cout << "Uknown materia" << std::endl;
-    return 0;
+    return NULL;
 }
