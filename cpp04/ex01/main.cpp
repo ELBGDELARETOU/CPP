@@ -1,15 +1,21 @@
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
-    int i = 0;
-    Brain brain;
+    Animal *animals[100];
 
-    while (i < 50)
+    for (int i = 0; i < 100; i++)
     {
+        if (i < 50)
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
     }
+    for (int i = 0; i < 100; i++)
+        animals[i]->makeSound();
+    for (int i = 0; i < 100; i++)
+        delete animals[i];
+    
 }

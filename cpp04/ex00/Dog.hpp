@@ -10,7 +10,7 @@ public:
     virtual void makeSound() const;
     Dog();
     Dog(const Dog &other);
-    Dog operator=(const Dog &other);
+    Dog &operator=(const Dog &other);
     Dog(std::string type);
     ~Dog();
 };

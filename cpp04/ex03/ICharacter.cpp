@@ -82,7 +82,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    // std::cout << _backPack[0] << std::endl;
     if (idx >= 0 && idx < 4 && _backPack[idx])
         _backPack[idx]->use(target);
     else

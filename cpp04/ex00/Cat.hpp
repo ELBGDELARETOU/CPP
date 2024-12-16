@@ -11,7 +11,7 @@ public:
     Cat(const Cat &other);
     Cat(std::string type);
     ~Cat();
-    Cat operator=(const Cat &other);    
+    Cat &operator=(const Cat &other);    
 
     virtual void makeSound() const;
 };

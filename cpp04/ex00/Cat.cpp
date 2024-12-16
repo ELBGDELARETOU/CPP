@@ -23,7 +23,7 @@ Cat::Cat(const Cat &other)
     type = other.type;
 }
 
-Cat Cat::operator=(const Cat &other)
+Cat &Cat::operator=(const Cat &other)
 {
     if (this != &other)
         type = other.type;

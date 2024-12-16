@@ -22,6 +22,12 @@ WrongCat::WrongCat(const WrongCat &other)
     std::cout << "WrongCat copy constructor called" << std::endl;
     type = other.type;
 }
+WrongCat &WrongCat::operator=(const WrongCat &other)
+{
+    if (this != &other)
+        this->type = other.type;
+    return *this;
+}
 
 void WrongCat::makeSound() const
 {

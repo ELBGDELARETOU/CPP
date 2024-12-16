@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:25:02 by anaouali          #+#    #+#             */
-/*   Updated: 2024/11/07 17:02:37 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:15:59 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ void    randomChump(std::string name){
 
     soloZombie.setName(name);
     soloZombie.annouce();
+    
 }

@@ -5,6 +5,8 @@
 
 class FragTrap : virtual public ClapTrap
 {
+protected:
+    unsigned int _attackDammageF;
 
 public:
     FragTrap();

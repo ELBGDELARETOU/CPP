@@ -4,26 +4,6 @@
 #include "Cure.hpp"
 #include "ICharacter.hpp"
 
-// int main()
-// {
-//     IMateriaSource *src = new MateriaSource();
-//     src->learnMateria(new Ice());
-//     src->learnMateria(new Cure());
-//     ICharacter *me = new Character("me");
-//     AMateria *tmp;
-//     tmp = src->createMateria("ice");
-//     me->equip(tmp);
-//     tmp = src->createMateria("cure");
-//     me->equip(tmp);
-//     ICharacter *bob = new Character("bob");
-//     me->use(0, *bob);
-//     me->use(1, *bob);
-//     delete bob;
-//     delete me;
-//     delete src;
-//     return 0;
-// }
-
 int main()
 {
 	{
@@ -48,6 +28,7 @@ int main()
 	{
 		IMateriaSource *src = new MateriaSource();
 		AMateria *tmp;
+		AMateria *pat;
 		ICharacter *bob = new Character("Bob");
 
 		src->learnMateria(new Ice());
@@ -57,13 +38,11 @@ int main()
 
 		tmp = src->createMateria("ice");
 		bob->equip(tmp);
+		pat = src->createMateria("cure");
+		bob->equip(pat);
 		tmp = src->createMateria("ice");
 		bob->equip(tmp);
-		tmp = src->createMateria("cure");
-		bob->equip(tmp);
-		tmp = src->createMateria("cure");
-		bob->equip(tmp);
-		tmp = src->createMateria("cure");
+		tmp = src->createMateria("prout");
 		bob->equip(tmp);
 		tmp = src->createMateria("cure");
 		bob->equip(tmp);
@@ -76,7 +55,8 @@ int main()
 		bob->use(3, *bob);
 
 		bob->unequip(1);
-
+		tmp = src->createMateria("ice");
+		bob->equip(tmp);
 		bob->use(0, *bob);
 		bob->use(1, *bob);
 		bob->use(2, *bob);
@@ -84,7 +64,7 @@ int main()
 
 		bob->use(5, *bob);
 		bob->use(-5, *bob);
-
+		delete pat;
 		delete src;
 		delete bob;
 		return 0;

@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog() 
+Dog::Dog()
 {
     std::cout << "Dog constructor called" << std::endl;
     type = "Dog";
@@ -15,6 +15,13 @@ Dog::Dog(std::string other)
 Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
+}
+
+Dog &Dog::operator=(const Dog &other)
+{
+    if (this != &other)
+        this->type = other.type;
+    return *this;
 }
 
 Dog::Dog(const Dog &other)
