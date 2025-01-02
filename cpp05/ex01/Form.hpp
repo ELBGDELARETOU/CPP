@@ -25,7 +25,7 @@ public:
     const int getGradeExecute();
 
     void beSigned(Bureaucrat &other);
-    void signForm(Bureaucrat &other, std::string reason);
+    void signForm(Bureaucrat &other);
 
     class GradeTooHighException : public std::exception
     {

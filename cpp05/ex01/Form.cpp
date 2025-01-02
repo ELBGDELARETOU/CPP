@@ -2,9 +2,9 @@
 
 Form::Form() : _name("NoName"), _grade_execute(150), _grade_sign(150), _signed(false) {}
 
-Form::Form(std::string name, const int grade) : _name(name), _grade_sign(grade), _grade_execute(150), _signed(false)
+Form::Form(std::string name, const int grade) : _name(name), _signed(false), _grade_sign(grade), _grade_execute(150)
 {
-    if (_grade_sign < 0)
+    if (_grade_sign <= 0)
         throw Form::GradeTooHighException();
     if (_grade_sign > 150)
         throw Form::GradeTooLowException();
@@ -34,21 +34,22 @@ const int Form::getGradeExecute() { return _grade_execute; }
 
 void Form::beSigned(Bureaucrat &other)
 {
-    if (other.getGrade() < _grade_sign)
+    if (other.getGrade() <= _grade_sign)
     {
         _signed = true;
-        signForm(other, "ok");
+        signForm(other);
     }
     else if (other.getGrade() > _grade_sign)
     {
-        signForm(other, "low");
+        _signed = false;
+        signForm(other);
         throw Form::GradeTooLowException();
     }
 }
 
-void Form::signForm(Bureaucrat &other, std::string reason)
+void Form::signForm(Bureaucrat &other)
 {
-    if (reason == "ok")
+    if (_signed == true)
         std::cout << other.getName() << " signed " << this->_name << std::endl;
     else
         std::cout << other.getName() << " couldn't sign " << this->_name << " because the grade is to low" << std::endl;
