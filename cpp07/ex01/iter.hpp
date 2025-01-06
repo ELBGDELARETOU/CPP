@@ -3,12 +3,8 @@
 
 #include <iostream>
 
-template <typename T>
+template <typename T, typename P>
 
-void iter(T* array, int length, void (*func)(T&))
-{
-    for (int i = 0; i < length; i++)
-        func(array[i]);
-}
+void iter(T* array, int length, P func);
 
 #endif

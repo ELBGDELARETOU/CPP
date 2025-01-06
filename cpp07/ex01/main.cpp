@@ -1,14 +1,15 @@
 #include "iter.hpp"
 
-void afficher(int& x) {
-    std::cout << x << " ";
+template <typename T, typename P>
+
+void iter(T* array, int length, P func)
+{
+    for (int i = 0; i < length; i++)
+        func(array[i]);
 }
 
-void afficher(float& x) {
-    std::cout << x << " ";
-}
-
-void afficher(char& x) {
+template <typename T>
+void afficher(T& x) {
     std::cout << x << " ";
 }
 
@@ -21,11 +22,11 @@ int main() {
     
     int length = 5;
 
-    iter(tab, length, afficher);
+    iter(tab, length, afficher<int>);
     std::cout << "\n" << std::endl;
-    iter(tab1, length, afficher);
+    iter(tab1, length, afficher<float>);
     std::cout << "\n" << std::endl;
-    iter(tab2, length, afficher);
+    iter(tab2, length, afficher<char>);
 
     return 0;
 }
