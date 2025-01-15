@@ -1,6 +1,13 @@
 #include "ScalarConvertor.hpp"
 
-int main()
-{
-    
+int	main(int ac, char **av) {
+	if (ac != 2)
+	{
+		std::cout << "Usage: ./convert [string]" << std::endl;
+		return (0);
+	}
+	
+	ScalarConvertor::convert(av[1]);
+
+	return 0;
 }
