@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : _name("NoName"), _grade_execute(150), _grade_sign(150), _signed(false) {}
+Form::Form() : _name("NoName"),_signed(false), _grade_sign(150), _grade_execute(150)  {}
 
 Form::Form(std::string name, const int grade) : _name(name), _signed(false), _grade_sign(grade), _grade_execute(150)
 {
@@ -12,7 +12,7 @@ Form::Form(std::string name, const int grade) : _name(name), _signed(false), _gr
 
 Form::~Form() {}
 
-Form::Form(const Form &other) : _grade_execute(150), _grade_sign(150), _signed(false)
+Form::Form(const Form &other) : _signed(false), _grade_sign(150), _grade_execute(150) 
 {
     this->_signed = other._signed;
 }
@@ -28,9 +28,9 @@ std::string Form::getName() { return _name; }
 
 bool Form::getSigned() { return _signed; }
 
-const int Form::getGradeSign() { return _grade_sign; }
+int Form::getGradeSign() { return _grade_sign; }
 
-const int Form::getGradeExecute() { return _grade_execute; }
+int Form::getGradeExecute() { return _grade_execute; }
 
 void Form::beSigned(Bureaucrat &other)
 {

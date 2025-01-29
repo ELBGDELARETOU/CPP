@@ -6,26 +6,17 @@ int main()
     {
         Bureaucrat b1;
     }
-    catch (const Bureaucrat::GradeTooHighException &e)
+    catch (const std::exception &e)
     {
         std::cout << "Erreur attrapée : " << e.what() << std::endl;
     }
-    catch (const Bureaucrat::GradeTooLowException &e)
-    {
-        std::cout << "Erreur attrapée : " << e.what() << std::endl;
-    }
-
     try
     {
         Bureaucrat b2("John", 1);
         b2.getGrade();
         b2.increment(150);
     }
-    catch (const Bureaucrat::GradeTooHighException &e)
-    {
-        std::cout << "Erreur attrapée : " << e.what() << std::endl;
-    }
-    catch (const Bureaucrat::GradeTooLowException &e)
+    catch (const std::exception &e)
     {
         std::cout << "Erreur attrapée : " << e.what() << std::endl;
     }
